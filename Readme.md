@@ -60,3 +60,156 @@ An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and S
 
         AWS Cognito ──► User Authentication
         DynamoDB    ──► Persistent Chat History
+
+Project Structure
+
+ChatBot/
+│
+├── chatbot_frontend.py
+├── chatbot_backend.py
+├── auth.py
+├── database.py
+├── rag.py
+├── requirements.txt
+├── .gitignore
+├── README.md
+│
+├── docs/
+│   ├── architecture.png
+│   ├── project-workflow.md
+│   └── setup-guide.md
+│
+└── screenshots/
+    ├── login.png
+    ├── chatbot.png
+    └── pdf-rag.png
+
+File Description
+
+File	Purpose
+
+chatbot_frontend.py------Streamlit UI, authentication flow and chat interface
+chatbot_backend.py------Bedrock LLM, LangChain memory, prompts and conversation chain
+auth.py----------AWS Cognito registration and login
+database.py--------DynamoDB chat history operations
+rag.py----------PDF processing, embeddings, FAISS and RAG
+requirements.txt	Python dependencies
+
+
+How It Works:
+
+
+Normal Chat
+
+User Input
+    ↓
+Streamlit
+    ↓
+LangChain ConversationChain
+    ↓
+Conversation Memory + Prompt
+    ↓
+AWS Bedrock
+    ↓
+Llama 3.1 8B
+    ↓
+Response
+    ↓
+Streamlit
+
+
+PDF Question Answering:
+PDF Upload
+    ↓
+PyPDF
+    ↓
+Text Extraction
+    ↓
+Text Chunking
+    ↓
+Titan Embeddings
+    ↓
+FAISS Vector Store
+    ↓
+Relevant Document Chunks
+    ↓
+AWS Bedrock
+    ↓
+Answer
+
+
+Setup
+
+Prerequisites:
+
+Python 3.9+
+Anaconda
+AWS account
+AWS CLI
+VS Code
+AWS Bedrock model access
+AWS Cognito configuration
+DynamoDB chat_history table
+Install Dependencies
+pip install -r requirements.txt
+Configure AWS CLI
+aws configure
+
+Verify AWS CLI access:
+
+aws s3 ls
+
+The application uses the AWS CLI profile for authentication.
+
+Run the Application
+
+Run:
+
+streamlit run chatbot_frontend.py
+
+Then open:
+
+http://localhost:8501
+
+Security:
+
+Never commit sensitive credentials to GitHub.
+
+Do not upload:
+
+AWS Access Keys
+AWS Secret Access Keys
+Cognito Client Secrets
+.env files
+Private keys
+
+Use AWS CLI profiles, environment variables, or AWS Secrets Manager for sensitive configuration.
+
+Example .gitignore:
+
+.env
+*.pem
+.aws/
+__pycache__/
+Screenshots
+
+Screenshots of the application are available in the screenshots/ directory.
+
+Documentation
+
+Detailed project documentation, architecture diagrams, workflow explanations, and setup information are available in the docs/ directory.
+
+Future Enhancements
+Deploy the application to AWS
+Add streaming responses
+Add CloudWatch monitoring
+Support multiple PDF documents
+Persist vector stores
+Add conversation export
+Add voice input/output
+Add multilingual support
+Author
+
+Pratik Bawkar
+
+MCA | AWS | Cloud & DevOps | AI/LLM Applications
