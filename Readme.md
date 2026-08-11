@@ -2,6 +2,8 @@
 
 An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and Streamlit**. The project supports conversational memory, configurable response styles, user authentication, persistent chat history, and PDF-based question answering using RAG.
 
+
+
 ## Features
 
 - AI chatbot powered by **Meta Llama 3.1 8B Instruct** on AWS Bedrock
@@ -32,7 +34,7 @@ An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and S
 
 ## Architecture
 
-```text
+
                          User
                            │
                            ▼
@@ -61,7 +63,9 @@ An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and S
         AWS Cognito ──► User Authentication
         DynamoDB    ──► Persistent Chat History
 
-Project Structure
+## Project Structure
+
+```text
 
 ChatBot/
 │
@@ -84,20 +88,29 @@ ChatBot/
     ├── chatbot.png
     └── pdf-rag.png
 
-File Description
+```
+
+## File Description
+
+
 
 File	Purpose
 
-chatbot_frontend.py------Streamlit UI, authentication flow and chat interface
-chatbot_backend.py------Bedrock LLM, LangChain memory, prompts and conversation chain
-auth.py----------AWS Cognito registration and login
-database.py--------DynamoDB chat history operations
-rag.py----------PDF processing, embeddings, FAISS and RAG
-requirements.txt	Python dependencies
+```text
+
+chatbot_frontend.py         Streamlit UI, authentication flow and chat interface
+chatbot_backend.py          Bedrock LLM, LangChain memory, prompts and conversation chain
+auth.py                     AWS Cognito registration and login
+database.py                 DynamoDB chat history operations
+rag.py                      PDF processing, embeddings, FAISS and RAG
+requirements.txt	         Python dependencies
+```
 
 
-How It Works:
 
+## How It Works:
+
+```text
 
 Normal Chat
 
@@ -117,8 +130,12 @@ Response
     ↓
 Streamlit
 
+```
+## PDF Question Answering:
 
-PDF Question Answering:
+```text
+
+
 PDF Upload
     ↓
 PyPDF
@@ -136,9 +153,11 @@ Relevant Document Chunks
 AWS Bedrock
     ↓
 Answer
+```
 
+## Setup
 
-Setup
+```text
 
 Prerequisites:
 
@@ -154,6 +173,8 @@ Install Dependencies
 pip install -r requirements.txt
 Configure AWS CLI
 aws configure
+
+
 
 Verify AWS CLI access:
 
@@ -171,7 +192,14 @@ Then open:
 
 http://localhost:8501
 
-Security:
+```
+
+
+
+
+## Security:
+
+```text
 
 Never commit sensitive credentials to GitHub.
 
@@ -185,6 +213,8 @@ Private keys
 
 Use AWS CLI profiles, environment variables, or AWS Secrets Manager for sensitive configuration.
 
+Disclaimer: For security reasons, all AWS credentials, API keys, passwords, Cognito secrets, and other sensitive authentication details have been removed from the source code before publishing this repository. Therefore, the uploaded source code will not run as-is without configuring your own AWS resources and credentials. Please use your own keys and configuration when running the project.
+
 Example .gitignore:
 
 .env
@@ -193,13 +223,16 @@ Example .gitignore:
 __pycache__/
 Screenshots
 
+```
 Screenshots of the application are available in the screenshots/ directory.
 
 Documentation
 
 Detailed project documentation, architecture diagrams, workflow explanations, and setup information are available in the docs/ directory.
 
-Future Enhancements
+```text
+
+## Future Enhancements
 Deploy the application to AWS
 Add streaming responses
 Add CloudWatch monitoring
@@ -209,7 +242,11 @@ Add conversation export
 Add voice input/output
 Add multilingual support
 Author
+```
 
-Pratik Bawkar
 
-MCA | AWS | Cloud & DevOps | AI/LLM Applications
+
+## Pratik Bawkar
+
+##   AWS | Cloud & DevOps | AI/LLM Applications
+
