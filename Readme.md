@@ -20,7 +20,6 @@ An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and S
 - Clear chat and logout functionality
 
 ## Tech Stack
-
 - **AWS Bedrock** – LLM inference
 - **Meta Llama 3.1 8B Instruct** – AI model
 - **LangChain** – LLM orchestration, memory and prompt management
