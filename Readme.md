@@ -107,8 +107,6 @@ requirements.txt	         Python dependencies
 ```
 
 
-
-
 ## How It Works:
 
 ```text
