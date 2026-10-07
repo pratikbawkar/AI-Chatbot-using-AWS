@@ -19,6 +19,7 @@ An AI-powered conversational chatbot built using **AWS Bedrock, LangChain, and S
 - Amazon Titan Embeddings with **FAISS** vector search
 - Clear chat and logout functionality
 
+
 ## Tech Stack
 - **AWS Bedrock** – LLM inference
 - **Meta Llama 3.1 8B Instruct** – AI model
